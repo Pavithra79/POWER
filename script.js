@@ -17,7 +17,7 @@ $(function(){
         autoScrolling: true,
         fitToSection: true,
         fitToSectionDelay: 1000,
-        scrollBar: false,
+        scrollBar: true,
         easing: 'easeInOutCubic',
         easingcss3: 'ease',
         loopBottom: false,
@@ -79,6 +79,12 @@ $(function(){
      hamburger.toggleClass('active');
      return false;
   });
+    
+    
+    $('.counter').counterUp({
+                delay: 10,
+                time: 1000
+            });
     
     
     
