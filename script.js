@@ -32,7 +32,7 @@ $(function(){
         resetSliders: false,
         fadingEffect: false,
         normalScrollElements: '#element1, .element2',
-        scrollOverflow: false,
+        scrollOverflow: true,
         scrollOverflowReset: false,
         scrollOverflowOptions: null,
         touchSensitivity: 15,
@@ -86,6 +86,10 @@ $(function(){
                 time: 1000
             });
     
+    $(".transformation-image").twentytwenty({
+    default_offset_pct: 0.7, // How much of the before image is visible when the page loads
+    orientation: 'horizontal' // Orientation of the before and after images ('horizontal' or 'vertical')
+  });
     
     
     

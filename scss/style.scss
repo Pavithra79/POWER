@@ -1,35 +1,30 @@
 @import "variables";
 @import "mixins";
-
-html{
+html {
     box-sizing: border-box;
     height: 100vh;
     width: 100%;
     background-color: white;
     overflow: hidden !important;
+    background-color: #f2f2f2;
 }
-body{
+
+body {
     font-family: $primary-font;
 }
 
 //universal
-.section{
-    
+.section {
     text-align: center;
-    
-    
 }
 
-
-h1{
+h1 {
     font-weight: 400;
-        margin-top:0%;
+    margin-top: 0%;
     margin-bottom: 0%;
     padding-top: 2%;
-
     position: relative;
-    
-    &:before{
+    &:before {
         content: '';
         position: absolute;
         z-index: 7;
@@ -42,10 +37,8 @@ h1{
         transition: background-color 300ms ease-in-out;
         max-width: 60%;
     }
-    
-    &:after{
+    &:after {
         content: '';
-        
         position: absolute;
         z-index: 8;
         top: 100%;
@@ -54,47 +47,52 @@ h1{
         background-color: #c22436;
         width: 30px;
         height: 4px;
-
         transform: translateX(-50%) skew(45deg);
- 
         transition: background-color 400ms ease 0ms;
+    }
 }
 
-    
-}
-
-h2{
+h2 {
     font-weight: 200;
     margin-top: 2%;
     margin-bottom: 2%;
 }
 
-h4{
+h4 {
     font-weight: 600;
     margin-top: 2%;
     margin-bottom: 2%;
 }
-p{
+
+p {
     font-size: 0.8em;
-    margin:0;
-    padding:0 5%;
+    margin: 0;
+    padding: 0 5%;
 }
 
-.container{
+.container {
     z-index: 3;
     width: 100%;
-    height: 88vh;
+    height: 86vh;
 }
 
-.title-container{
+.title-container {
     height: 12vh;
     width: 100%;
 }
 
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
 
 
 /*navbar*/
-.hamburger{
+
+.hamburger {
     display: block;
     position: relative;
     overflow: hidden;
@@ -110,265 +108,311 @@ p{
     border: none;
     cursor: pointer;
     transition: background 0.3s;
-    float:right;
-    
-    &:focus{
-        outline:none;
+    float: right;
+    &:focus {
+        outline: none;
     }
-    
-    span{
+    span {
         display: block;
         position: absolute;
-        top:20px;
-        left:2px;
-        right:2px;
+        top: 20px;
+        left: 2px;
+        right: 2px;
         height: 3px;
         background: black;
-        
-        &:before{
+        &:before {
             position: absolute;
             display: block;
-            left:0;
-            width:100%;
-            height:3px;
+            left: 0;
+            width: 100%;
+            height: 3px;
             background: black;
-            content:"";
-            top:-10px;
+            content: "";
+            top: -10px;
         }
-        &:after{
+        &:after {
             position: absolute;
             display: block;
-            left:0;
-            width:100%;
-            height:3px;
+            left: 0;
+            width: 100%;
+            height: 3px;
             background: black;
-            content:"";
-            bottom:-10px;
+            content: "";
+            bottom: -10px;
         }
     }
-    
-    
-    
-
 }
 
-.hamburger--x{
-        background-color: transparent;
-        
-        span{
-            transition: background 0s 0.2s;
-            
-            &:before{
-                transition-duration: 0.3s;
-                transition-delay: 0.2s;
-                transition-property: top, transform;
-            }
-            &:after{
-                transition-duration: 0.3s;
-                transition-delay: 0.2s;
-                transition-property: bottom, transform;
-            }
+.hamburger--x {
+    background-color: transparent;
+    span {
+        transition: background 0s 0.2s;
+        &:before {
+            transition-duration: 0.3s;
+            transition-delay: 0.2s;
+            transition-property: top, transform;
         }
-        &.active{
-        span{
+        &:after {
+            transition-duration: 0.3s;
+            transition-delay: 0.2s;
+            transition-property: bottom, transform;
+        }
+    }
+    &.active {
+        span {
             background: none;
-            
-            &:before{
-                top:0;
+            &:before {
+                top: 0;
                 transform: rotate(45deg);
                 transition-delay: 0.2s;
             }
-            &:after{
-                bottom:0;
+            &:after {
+                bottom: 0;
                 transform: rotate(-45deg);
                 transition-delay: 0.2s;
             }
         }
     }
-    }
+}
 
-nav{
-    top:-50px;
+nav {
+    top: -50px;
     width: 100%;
     height: 100%;
-    display:none;
-    background:rgba(0,0,0,0.9);
-    z-index:9;
+    display: none;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 9;
     transition: all 0.3s;
     transition-delay: 0.3s;
     overflow: hidden;
     position: fixed;
-//    opacity: 0;
-    
-    &.shown{
-        top:0;
-//        opacity:1;
+    //    opacity: 0;
+    &.shown {
+        top: 0;
+        //        opacity:1;
         display: block;
     }
 }
 
-.menu{
+.menu {
     text-align: center;
     text-decoration: none;
     list-style-type: none;
     padding-top: 10vh;
     padding-left: 0;
-    
-    
-    li{
+    li {
         padding: 4% 0;
         color: white;
         text-transform: uppercase;
         font-size: 1.5em;
         font-family: 'Nunito', sans-serif;
         transition: 0.2s ease;
-        
-        &:hover{
+        &:hover {
             text-decoration: underline;
-            
         }
     }
-    
 }
 
-header{
+header {
     width: 100%;
     height: 12vh;
     position: fixed;
     z-index: 10;
 }
 
-
-.block{
+.block {
     background-color: indianred;
     width: 100%;
     height: 54px;
-    z-index:-1;
+    z-index: -1;
     position: absolute;
-    
-    &:after{
-
-  content: '';
-  width: 0%;
-  height: 100%;
-  position: absolute;
-  background: inherit;
-  z-index: -1;
-  bottom: 0;
-  transform-origin: left bottom;
-  transform: skewY(3deg);
+    &:after {
+        content: '';
+        width: 0%;
+        height: 100%;
+        position: absolute;
+        background: inherit;
+        z-index: -1;
+        bottom: 0;
+        transform-origin: left bottom;
+        transform: skewY(3deg);
     }
-
 }
 
+
 /*about-us*/
-.image-about{
+
+.image-about {
     width: 250px;
     height: 250px;
 }
 
+
 /*the gym*/
 
-.gym-info-box{
-    border:1px solid black;
+.gym-info-box {
+    border: 1px solid black;
     display: inline-block;
     width: calc(100%/4.5);
     margin-bottom: 2%;
-    
-    span{
+    span {
         font-size: 0.8em;
     }
 }
 
-.circle{
-    border:2px solid black;
+.circle {
+    border: 2px solid black;
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    margin:0 auto;
+    margin: 0 auto;
     display: table;
-    
-    span{
+    span {
         display: table-cell;
         vertical-align: middle;
-        font-size:1.5em;
+        font-size: 1.5em;
     }
-    
 }
 
 //coaches
-
-@mixin grid($cols, $marg){
-    float:left;
+@mixin grid($cols, $marg) {
+    float: left;
     margin: $marg;
-    width:((100%-(($cols - 1) * $marg))/$cols)
-    
+    width: ((100%-(($cols - 1) * $marg))/$cols)
 }
 
-.coaches .container{
+.coaches .container {
     height: 60vh;
     margin-top: 6vh;
 }
 
-.coaches-box{
-    @include grid(2,0%);
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+.coaches-box {
+    @include grid(2, 0%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     height: 50%;
-
     display: inline-block;
-    
-    &:hover{
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    &:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     }
-
 }
 
-.coaches-image{
+.coaches-image {
     width: 100%;
     height: 60%;
     overflow: hidden;
-    
-    img{
+    img {
         width: 100%;
         height: 100%;
     }
-    
 }
 
-.coaches-info{
-    
+.coaches-info {
     height: 40%;
     width: 100%;
     position: relative;
-    
-        
-
-    
 }
 
 //classes
-
-.woman-class{
+.woman-class {
     width: 100%;
-    height:50%;
-
-    
-    img{
+    height: 50%;
+    img {
         height: 100%;
     }
 }
 
-.man-class{
+.man-class {
     width: 100%;
     height: 50%;
-
-    
-    img{
-        height:100%;
+    img {
+        height: 100%;
     }
 }
 
+//tranformations
+.transformation-container {
+    height: 50%;
+    width: 100%;
+    overflow: hidden;
+    .transformation-image {
+        width: 50%;
+        height: 100%;
+        display: inline-block;
+        img {
+            max-width: 100%;
+        }
+    }
+    .transformation-quote {
+        width: 50%;
+        height: 100%;
+        display: inline-block;
+    }
+}
 
+//contact
+.contact {
+    background-image: url(../images/kettlebell-1045067_1280.jpg);
+    background-position: center;
+    background-size: cover;
+    h1 {
+        color: white;
+    }
+}
 
-    
+.card {
+    background-color: white;
+    width: 80%;
+    height: 80vh;
+    margin: 0 auto;
+    margin-top: 4vh;
+    box-shadow: 0px 1px 4px #BDBDBD;
+    #contact-form {
+        padding: 25px;
+        padding-top: 10px;
+        text-align: center;
+        h4 {
+            font-weight: 700;
+            padding: .75rem 0;
+            border: solid #f2f2f2;
+            border-width: thin 0;
+        }
+        span {
+            font-size: 0.7em;
+        }
+        fieldset {
+            border: none;
+            input {
+                border: 1px solid #CCC;
+                margin: 0 0 5px;
+                background-color: #f2f2f2;
+                width: 100%;
+                font-size: 0.9em;
+                
+            }
+            textarea {
+                border: 1px solid #CCC;
+                margin: 0 0 5px;
+                resize: none;
+                width: 100%;
+                background-color: #f2f2f2;
+                font-size: 0.9em;
+            }
+        }
+        button {
+            border: none;
+            text-transform: uppercase;
+            outline: 0;
+            background: #4CAF50;
+            width: 100%;
+            border: 0;
+            padding: 15px;
+            color: #FFFFFF;
+            transition: 0.3s ease-in;
+            
+            &:hover{
+                background-color: #228426;
+            }
+        }
+    }
+}
