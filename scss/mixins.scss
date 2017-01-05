@@ -1,0 +1,5 @@
+@mixin grid($cols, $marg) {
+    float: left;
+    margin: $marg;
+    width: ((100%-(($cols - 1) * $marg))/$cols)
+}

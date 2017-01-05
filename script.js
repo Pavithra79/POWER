@@ -92,6 +92,19 @@ $(function(){
   });
     
     
+    $("#rotate-lines").Morphext({
+    animation: "fadeIn", // Overrides default "bounceIn"
+    separator: ",", // Overrides default ","
+    speed: 3000, // Overrides default 2000
+
+});
+    
+$('.gym-gallery').flickity({
+  // options
+  cellAlign: 'left',
+  contain: true
+});
+    
     
     
 });

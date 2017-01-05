@@ -7,9 +7,13 @@
     <title>Power Gym Website</title>
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Reem+Kufi" rel="stylesheet">
     <!--  normalize css-->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="vendor/Morphext-2.4.4/dist/morphext.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="vendor/twentytwenty/twentytwenty.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.0.5/flickity.min.css">
     <link rel="stylesheet" href="vendor/fullpage/jquery.fullPage.css">
     <link rel="stylesheet" href="css/style.css"> </head>
 
@@ -30,11 +34,13 @@
     </header>
     <div id="fullpage">
         <div class="section homepage">
-            <div class="title-container">
-                <h1>POWER</h1></div>
+            <div class="homepage-text">
+                <h1>POWER</h1>
+                <div class="tagline"> <span id="rotate-lines">Dare to be Great, Dare to unlock Potential, Dare to get Started</span></div>
+                <div class="button-container"><a class="button join-button" href=".contact">JOIN NOW</a></div>
+            </div>
         </div>
         <div class="section about">
-            <div class="block"></div>
             <div class="container">
                 <div class="title-container">
                     <h1>ABOUT US</h1></div>
@@ -46,29 +52,57 @@
         <div class="section gym">
             <div class="container">
                 <div class="title-container">
-                    <h1>FACILITIES</h1></div>
-                <div class="gym-info">
-                    <div class="gym-info-box">
-                        <div class="circle"><span class="counter">3</span></div> <span>Highly equipped weight rooms</span> </div>
-                    <div class="gym-info-box">
-                        <div class="circle"><span class="counter">5</span></div> <span>Highly equipped weight rooms</span> </div>
-                    <div class="gym-info-box">
-                        <div class="circle"><span class="counter">8</span></div> <span>Highly equipped weight rooms</span> </div>
-                    <div class="gym-info-box">
-                        <div class="circle"><span class="counter">4</span></div> <span>Highly equipped weight rooms</span> </div>
+                    <h1>FACILITIES</h1>
                 </div>
-                <p>We have all the gear you need to get you to your goals; we’re fully kitted out for resistance training, cardiovascular exercise as well as flexibility & health. Come in any time to take a look around and take the first steps towards the new and improved you!</p>
-                <div class="gym-carousel"></div>
+                <div class="gym-info">
+                  
+                  <div class="circle-row">
+                     <div class="circle"><span class="counter">2</span></div>
+                     <div class="circle"><span class="counter">2</span></div>
+                     <div class="circle"><span class="counter">2</span></div>
+                     <div class="circle"><span class="counter">2</span></div>
+                  </div>
+                  <div class="info-row">
+                     <div class="gym-info-box">
+                         <span>Instructor Rooms</span>
+                    </div>
+                     <div class="gym-info-box">
+                         <span>Aerobic Rooms</span> 
+                    </div>
+                     <div class="gym-info-box">
+                         <span>Weight Rooms</span> 
+                    </div>
+                    <div class="gym-info-box">
+                         <span>Changing Rooms</span>
+                    </div>
+                  </div>
+                                         
+                  <p>We have all the gear you need to get you to your goals; we’re fully kitted out for resistance training, cardiovascular exercise as well as flexibility & health. Come in any time to take a look around and take the first steps towards the new and improved you!
+                  </p>     
+                </div>
+
+                <div class="gym-carousel">
+                    <div class="gym-gallery js-flickity ">
+                        <div class="carousel-cell"><img src="http://placehold.it/300x300"></div>
+                        <div class="carousel-cell"><img src="http://placehold.it/300x300"></div>
+                        <div class="carousel-cell"><img src="http://placehold.it/300x300"></div>
+                        <div class="carousel-cell"><img src="http://placehold.it/300x300"></div>
+                        <div class="carousel-cell"><img src="http://placehold.it/300x300"></div>
+                        <div class="carousel-cell"><img src="http://placehold.it/300x300"></div>
+                        <div class="carousel-cell"><img src="http://placehold.it/300x300"></div>
+                        <div class="carousel-cell"><img src="http://placehold.it/300x300"></div>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="section classes">
             <div class="title-container">
                 <h1>CLASSES</h1></div>
             <div class="container">
-                <div class="woman-class"> <img src="images/female-model-crop.png" alt="">
+                <div class="woman-class"> <img class="left" src="images/female-model-crop.png" alt="">
                     <button></button>
                 </div>
-                <div class="man-class"> <img src="images/male-model-crop2.png" alt="">
+                <div class="man-class"> <img class="right" src="images/male-model-crop2.png" alt="">
                     <button></button>
                 </div>
             </div>
@@ -127,26 +161,19 @@
         <div class="section contact">
             <h1>CONTACT US</h1>
             <div class="container card">
-             <form id="contact-form" action="">
-                <h4>GET IN TOUCH</h4>
-                <span>Whatever it may be, please use the form below so that we can help assist you.</span>
-                <fieldset>
-                 <input placeholder="Your name" type="text"  required>
-                </fieldset>
-                <fieldset>
-                    <input placeholder="Your E-mail" type="email" required>
-                </fieldset>
-                <fieldset>
-                    <input placeholder="Your number" type="tel" required>
-                </fieldset>
-                <fieldset>
-                    <textarea placeholder="Type your message here"></textarea>
-                </fieldset>
-                <button name="submit" type="submit" id="contact-submit" >Send Enquiry</button>
-                
-                 
-             </form>
-
+                <form id="contact-form" action="">
+                    <h4>GET IN TOUCH</h4> <span>Whatever it may be, please use the form below so that we can help assist you.</span>
+                    <fieldset>
+                        <input placeholder="Your name" type="text" required> </fieldset>
+                    <fieldset>
+                        <input placeholder="Your E-mail" type="email" required> </fieldset>
+                    <fieldset>
+                        <input placeholder="Your number" type="tel" required> </fieldset>
+                    <fieldset>
+                        <textarea placeholder="Type your message here"></textarea>
+                    </fieldset>
+                    <button class="button submit-button" name="submit" type="submit" id="contact-submit">Send Enquiry</button>
+                </form>
             </div>
         </div>
     </div>
@@ -154,8 +181,10 @@
     <!--    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="vendor/twentytwenty/jquery.event.move.js"></script>
+    <script src="vendor/Morphext-2.4.4/dist/morphext.min.js"></script>
     <script src="vendor/twentytwenty/jquery.twentytwenty.js"></script>
     <script src="vendor/counter-up/jquery.counterup.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.0.5/flickity.pkgd.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
     <script src="vendor/fullpage/jquery.fullPage.js"></script>
     <script src="script.js"></script>
