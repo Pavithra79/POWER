@@ -305,7 +305,7 @@ header {
         color: white; }
 
 .carousel-cell {
-  width: 70%;
+  width: 100%;
   height: 200px;
   /* flex-box, center image in cell */
   display: -webkit-box;
@@ -319,22 +319,21 @@ header {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center; }
-
-.carousel-cell img {
-  display: block;
-  max-width: 100%;
-  max-height: 100%;
-  /* dim unselected */
-  opacity: 0.7;
-  -webkit-transform: scale(0.85);
-  -ms-transform: scale(0.85);
-  transform: scale(0.85);
-  -webkit-filter: blur(5px);
-  filter: blur(5px);
-  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s, transform 0.3s, -webkit-filter 0.3s, filter 0.3s;
-  transition: opacity 0.3s, -webkit-transform 0.3s, -webkit-filter 0.3s;
-  transition: opacity 0.3s, transform 0.3s, filter 0.3s;
-  transition: opacity 0.3s, transform 0.3s, filter 0.3s, -webkit-transform 0.3s, -webkit-filter 0.3s; }
+  .carousel-cell img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    /* dim unselected */
+    opacity: 0.7;
+    -webkit-transform: scale(0.85);
+    -ms-transform: scale(0.85);
+    transform: scale(0.85);
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s, transform 0.3s, -webkit-filter 0.3s, filter 0.3s;
+    transition: opacity 0.3s, -webkit-transform 0.3s, -webkit-filter 0.3s;
+    transition: opacity 0.3s, transform 0.3s, filter 0.3s;
+    transition: opacity 0.3s, transform 0.3s, filter 0.3s, -webkit-transform 0.3s, -webkit-filter 0.3s; }
 
 /* brighten selected image */
 .carousel-cell.is-selected img {
@@ -344,14 +343,6 @@ header {
   transform: scale(1);
   -webkit-filter: none;
   filter: none; }
-
-@media screen and (min-width: 768px) {
-  .carousel-cell {
-    height: 400px; } }
-
-@media screen and (min-width: 960px) {
-  .carousel-cell {
-    width: 60%; } }
 
 /* buttons, no circle */
 .flickity-prev-next-button {
@@ -369,7 +360,8 @@ header {
   fill: white; }
 
 .flickity-prev-next-button.no-svg {
-  color: white; }
+  color: white;
+  opacity: 0.7; }
 
 /* closer to edge */
 .flickity-prev-next-button.previous {
@@ -382,9 +374,22 @@ header {
 .flickity-prev-next-button:disabled {
   display: none; }
 
-.coaches .container {
-  height: 60vh;
-  margin-top: 6vh; }
+.flickity-page-dots .dot {
+  background: #ffffff;
+  opacity: 0.4; }
+
+.flickity-page-dots .dot.is-selected {
+  background: #c22436; }
+
+.coaches {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(194, 36, 54, 0.29)), url(../images/gym-girl.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right bottom; }
+
+.coaches-intro {
+  width: 100%;
+  height: 22%; }
 
 .coaches-box {
   float: left;
@@ -392,8 +397,10 @@ header {
   width: 50%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  height: 50%;
-  display: inline-block; }
+  height: 33%;
+  background-color: rgba(39, 29, 29, 0.79);
+  display: inline-block;
+  box-shadow: 0 8px 16px 0 black; }
   .coaches-box:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); }
 
@@ -409,21 +416,77 @@ header {
   height: 40%;
   width: 100%;
   position: relative; }
+  .coaches-info .info-row {
+    width: 100%;
+    height: 60%; }
+    .coaches-info .info-row h4 {
+      color: white;
+      margin: 0; }
+  .coaches-info .icon-row {
+    width: 100%;
+    height: 30%;
+    margin-top: 2.5%; }
+    .coaches-info .icon-row svg {
+      height: 90%; }
+
+.classes {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(194, 36, 54, 0.29)), url(../images/KICKBOXER.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right; }
 
 .woman-class {
   width: 100%;
-  height: 50%; }
+  height: 44%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+  position: relative; }
+  .woman-class:hover {
+    background: rgba(255, 0, 0, 0.33); }
   .woman-class img {
     height: 100%; }
+  .woman-class .button {
+    background-color: transparent;
+    border: 1px solid white;
+    display: block;
+    position: absolute;
+    top: 40%;
+    right: 10%;
+    padding-right: 6%;
+    padding-left: 6%;
+    text-decoration: none;
+    font-size: 0.8em; }
 
 .man-class {
   width: 100%;
-  height: 50%; }
+  height: 44%;
+  position: relative; }
+  .man-class:hover {
+    background: rgba(33, 150, 243, 0.24); }
   .man-class img {
     height: 100%; }
+  .man-class .button {
+    background-color: transparent;
+    border: 1px solid white;
+    display: block;
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    padding-right: 6%;
+    padding-left: 6%;
+    text-decoration: none;
+    font-size: 0.8em; }
+
+.transformation {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(194, 36, 54, 0.29)), url(../images/womanback.jpg);
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.tranform-info {
+  width: 100%;
+  height: 10%; }
 
 .transformation-container {
-  height: 50%;
+  height: 39%;
   width: 100%;
   overflow: hidden; }
   .transformation-container .transformation-image {
