@@ -35,7 +35,7 @@ body {
       transform: translateX(-50%);
       transition: background-color 300ms ease-in-out;
       max-width: 60%;
-      background-color: gray; }
+      background-color: white; }
     .title-container h1:after {
       content: '';
       position: absolute;
@@ -67,7 +67,11 @@ p {
   font-size: 0.8em;
   margin: 0;
   padding: 0 5%;
-  color: white; }
+  color: white;
+  text-shadow: 0px 0px 3px #000; }
+
+span {
+  text-shadow: 0px 0px 3px #000; }
 
 .container {
   z-index: 3;
@@ -207,6 +211,11 @@ header {
   position: fixed;
   z-index: 10; }
 
+.logo {
+  width: 20%;
+  height: 100%;
+  float: left; }
+
 .block {
   background-color: indianred;
   width: 100%;
@@ -261,9 +270,24 @@ header {
       width: 50%;
       background-color: #c22436; }
       .homepage .homepage-text .join-button:hover {
-        background-color: #971c2a; }
+        background-color: #971c2a;
+        -webkit-transform: translateY(1px);
+        -ms-transform: translateY(1px);
+        transform: translateY(1px);
+        transition: 0.4s all ease; }
 
 /*about-us*/
+.about {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(194, 36, 54, 0.29)), url(../images/gym-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat; }
+  .about blockquote {
+    border-left: 2px solid #fff; }
+    .about blockquote span {
+      display: block;
+      margin-top: 10px;
+      font-size: 1.1em; }
+
 .image-about {
   width: 250px;
   height: 250px; }
@@ -425,7 +449,7 @@ header {
   .coaches-info .icon-row {
     width: 100%;
     height: 30%;
-    margin-top: 2.5%; }
+    margin-top: 0.5%; }
     .coaches-info .icon-row svg {
       height: 90%; }
 
@@ -440,8 +464,6 @@ header {
   height: 44%;
   border-bottom: 1px solid rgba(255, 255, 255, 0.22);
   position: relative; }
-  .woman-class:hover {
-    background: rgba(255, 0, 0, 0.33); }
   .woman-class img {
     height: 100%; }
   .woman-class .button {
@@ -455,13 +477,13 @@ header {
     padding-left: 6%;
     text-decoration: none;
     font-size: 0.8em; }
+    .woman-class .button:hover {
+      background: rgba(255, 0, 0, 0.33); }
 
 .man-class {
   width: 100%;
   height: 44%;
   position: relative; }
-  .man-class:hover {
-    background: rgba(33, 150, 243, 0.24); }
   .man-class img {
     height: 100%; }
   .man-class .button {
@@ -475,6 +497,8 @@ header {
     padding-left: 6%;
     text-decoration: none;
     font-size: 0.8em; }
+    .man-class .button:hover {
+      background: rgba(33, 150, 243, 0.24); }
 
 .transformation {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(194, 36, 54, 0.29)), url(../images/womanback.jpg);
@@ -486,19 +510,16 @@ header {
   height: 10%; }
 
 .transformation-container {
-  height: 39%;
+  height: 60%;
   width: 100%;
   overflow: hidden; }
   .transformation-container .transformation-image {
-    width: 50%;
+    width: 90%;
     height: 100%;
-    display: inline-block; }
+    margin: 0 auto; }
     .transformation-container .transformation-image img {
-      max-width: 100%; }
-  .transformation-container .transformation-quote {
-    width: 50%;
-    height: 100%;
-    display: inline-block; }
+      max-width: 100%;
+      margin: 0 auto; }
 
 .contact {
   background-image: url(../images/kettlebell-1045067_1280.jpg);
@@ -509,10 +530,10 @@ header {
 
 .card {
   background-color: white;
-  width: 80%;
-  height: 80vh;
+  height: 75%;
+  width: 75%;
   margin: 0 auto;
-  margin-top: 4vh;
+  margin-top: 4%;
   box-shadow: 0px 1px 4px #BDBDBD; }
   .card #contact-form {
     padding: 25px;
@@ -521,29 +542,50 @@ header {
     .card #contact-form h4 {
       font-weight: 700;
       padding: .75rem 0;
-      border: solid #f2f2f2;
+      border: solid rgba(0, 0, 0, 0.3);
       border-width: thin 0; }
     .card #contact-form span {
-      font-size: 0.7em; }
+      font-size: 0.7em;
+      text-shadow: none; }
     .card #contact-form fieldset {
-      border: none; }
+      border: none;
+      margin: 0.1em 0;
+      padding: 5px 0; }
       .card #contact-form fieldset input {
-        border: 1px solid #CCC;
         margin: 0 0 5px;
-        background-color: #f2f2f2;
+        background-color: transparent;
         width: 100%;
-        font-size: 0.9em; }
+        font-size: 0.9em;
+        text-align: center;
+        text-transform: uppercase;
+        border-top: 1px solid #fff;
+        border-left: 1px solid #fff;
+        border-right: 1px solid #fff;
+        border-bottom: 1px solid #ebd7cf; }
+        .card #contact-form fieldset input:focus {
+          outline: none; }
       .card #contact-form fieldset textarea {
-        border: 1px solid #CCC;
         margin: 0 0 5px;
         resize: none;
         width: 100%;
-        background-color: #f2f2f2;
-        font-size: 0.9em; }
+        background-color: transparent;
+        font-size: 0.9em;
+        text-align: center;
+        text-transform: uppercase;
+        border-top: 1px solid #fff;
+        border-left: 1px solid #fff;
+        border-right: 1px solid #fff;
+        border-bottom: 1px solid #ebd7cf; }
+        .card #contact-form fieldset textarea:focus {
+          outline: none; }
     .card #contact-form .submit-button {
       background: #4CAF50;
       color: #FFFFFF;
       width: 100%;
       transition: 0.3s ease-in; }
       .card #contact-form .submit-button:hover {
-        background-color: #228426; }
+        background-color: #3d8b40;
+        -webkit-transform: translateY(1px);
+        -ms-transform: translateY(1px);
+        transform: translateY(1px);
+        transition: 0.4s all ease; }

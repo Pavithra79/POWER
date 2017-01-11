@@ -36,13 +36,13 @@ $(function(){
         scrollOverflowReset: false,
         scrollOverflowOptions: null,
         touchSensitivity: 15,
-        normalScrollElementTouchThreshold: 5,
+        normalScrollElementTouchThreshold: 8,
         bigSectionsDestination: null,
 
         //Accessibility
         keyboardScrolling: true,
         animateAnchor: true,
-        recordHistory: true,
+        recordHistory: false,
 
         //Design
         controlArrows: true,
@@ -104,6 +104,8 @@ $('.gym-gallery').flickity({
   cellAlign: 'left',
   contain: true
 });
+    
+    
     
     
     

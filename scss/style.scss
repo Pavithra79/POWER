@@ -39,7 +39,7 @@ body {
             transform: translateX(-50%);
             transition: background-color 300ms ease-in-out;
             max-width: 60%;
-            background-color: gray;
+            background-color: white;
         }
         &:after {
             content: '';
@@ -76,6 +76,11 @@ p {
     margin: 0;
     padding: 0 5%;
     color: white;
+    text-shadow: 0px 0px 3px #000;
+}
+
+span {
+    text-shadow: 0px 0px 3px #000;
 }
 
 .container {
@@ -234,6 +239,12 @@ header {
     z-index: 10;
 }
 
+.logo {
+    width: 20%;
+    height: 100%;
+    float: left;
+}
+
 .block {
     background-color: indianred;
     width: 100%;
@@ -292,6 +303,8 @@ header {
             background-color: $primary-color;
             &:hover {
                 background-color: darken($primary-color, 10%);
+                transform: translateY(1px);
+                transition: 0.4s all ease;
             }
         }
     }
@@ -299,6 +312,20 @@ header {
 
 
 /*about-us*/
+
+.about {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(194, 36, 54, 0.29)), url(../images/gym-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    blockquote {
+        border-left: 2px solid #fff;
+        span {
+            display: block;
+            margin-top: 10px;
+            font-size: 1.1em;
+        }
+    }
+}
 
 .image-about {
     width: 250px;
@@ -484,7 +511,6 @@ header {
     height: 40%;
     width: 100%;
     position: relative;
-    
     .info-row {
         width: 100%;
         height: 60%;
@@ -496,7 +522,7 @@ header {
     .icon-row {
         width: 100%;
         height: 30%;
-        margin-top:2.5%;
+        margin-top: 0.5%;
         svg {
             height: 90%;
         }
@@ -516,9 +542,6 @@ header {
     height: 44%;
     border-bottom: 1px solid rgba(255, 255, 255, 0.22);
     position: relative;
-    &:hover {
-        background: rgba(255, 0, 0, 0.33);
-    }
     img {
         height: 100%;
     }
@@ -533,6 +556,9 @@ header {
         padding-left: 6%;
         text-decoration: none;
         font-size: 0.8em;
+        &:hover {
+            background: rgba(255, 0, 0, 0.33);
+        }
     }
 }
 
@@ -540,9 +566,6 @@ header {
     width: 100%;
     height: 44%;
     position: relative;
-    &:hover {
-        background: rgba(33, 150, 243, 0.24);
-    }
     img {
         height: 100%;
     }
@@ -557,41 +580,38 @@ header {
         padding-left: 6%;
         text-decoration: none;
         font-size: 0.8em;
+        &:hover {
+            background: rgba(33, 150, 243, 0.24);
+        }
     }
 }
 
 //tranformations
-
-.transformation{
-    
-        background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(194, 36, 54, 0.29)), url(../images/womanback.jpg);
+.transformation {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(194, 36, 54, 0.29)), url(../images/womanback.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    
-    
 }
 
-.tranform-info{
+.tranform-info {
     width: 100%;
     height: 10%;
 }
+
 .transformation-container {
-    height: 39%;
+    height: 60%;
     width: 100%;
     overflow: hidden;
     .transformation-image {
-        width: 50%;
+        width: 90%;
         height: 100%;
-        display: inline-block;
+        margin: 0 auto;
         img {
             max-width: 100%;
+            margin: 0 auto;
         }
     }
-    .transformation-quote {
-        width: 50%;
-        height: 100%;
-        display: inline-block;
-    }
+
 }
 
 //contact
@@ -606,10 +626,10 @@ header {
 
 .card {
     background-color: white;
-    width: 80%;
-    height: 80vh;
+    height: 75%;
+    width: 75%;
     margin: 0 auto;
-    margin-top: 4vh;
+    margin-top: 4%;
     box-shadow: 0px 1px 4px #BDBDBD;
     #contact-form {
         padding: 25px;
@@ -618,28 +638,47 @@ header {
         h4 {
             font-weight: 700;
             padding: .75rem 0;
-            border: solid #f2f2f2;
+            border: solid rgba(0, 0, 0, 0.3);
             border-width: thin 0;
         }
         span {
             font-size: 0.7em;
+            text-shadow: none;
         }
         fieldset {
             border: none;
+            margin: 0.1em 0;
+            padding: 5px 0;
             input {
-                border: 1px solid #CCC;
                 margin: 0 0 5px;
-                background-color: #f2f2f2;
+                background-color: transparent;
                 width: 100%;
                 font-size: 0.9em;
+                text-align: center;
+                text-transform: uppercase;
+                border-top: 1px solid #fff;
+                border-left: 1px solid #fff;
+                border-right: 1px solid #fff;
+                border-bottom: 1px solid #ebd7cf;
+                &:focus {
+                    outline: none;
+                }
             }
             textarea {
-                border: 1px solid #CCC;
                 margin: 0 0 5px;
                 resize: none;
                 width: 100%;
-                background-color: #f2f2f2;
+                background-color: transparent;
                 font-size: 0.9em;
+                text-align: center;
+                text-transform: uppercase;
+                border-top: 1px solid #fff;
+                border-left: 1px solid #fff;
+                border-right: 1px solid #fff;
+                border-bottom: 1px solid #ebd7cf;
+                &:focus {
+                    outline: none;
+                }
             }
         }
         .submit-button {
@@ -648,8 +687,12 @@ header {
             width: 100%;
             transition: 0.3s ease-in;
             &:hover {
-                background-color: #228426;
+                background-color: darken(#4CAF50, 10%);
+                transform: translateY(1px);
+                transition: 0.4s all ease;
             }
         }
     }
 }
+
+//coaches page
