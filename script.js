@@ -3,10 +3,10 @@ $(function(){
          //Navigation
         menu: '#menu',
         lockAnchors: false,
-        anchors:['homepage', 'about', 'gym','classes','coaches','transformations','contact'],
-        navigation: false,
+        anchors:['homepage', 'about', 'gym','classes','coaches','transformations','contact','footer'],
+        navigation: true,
         navigationPosition: 'right',
-        navigationTooltips: ['firstSlide', 'secondSlide'],
+        navigationTooltips: ['Home', 'About', 'gym','classes','coaches','transformations','contact','footer'],
         showActiveTooltip: false,
         slidesNavigation: false,
         slidesNavPosition: 'bottom',
@@ -31,7 +31,7 @@ $(function(){
         offsetSections: false,
         resetSliders: false,
         fadingEffect: false,
-        normalScrollElements: '#element1, .element2',
+        normalScrollElements: '#transformation-image-2, #transformation-image-1',
         scrollOverflow: true,
         scrollOverflowReset: false,
         scrollOverflowOptions: null,
@@ -50,7 +50,7 @@ $(function(){
         sectionsColor : [],
 //        paddingTop: '3em',
 //        paddingBottom: '10px',
-        fixedElements: '#header, .footer',
+        fixedElements: '#header',
         responsiveWidth: 0,
         responsiveHeight: 0,
         responsiveSlides: false,
@@ -73,11 +73,11 @@ $(function(){
     
     
     var hamburger = $('.hamburger');
-  var nav = $('nav');
-  hamburger.click(function() {
-    nav.toggleClass('shown');
-     hamburger.toggleClass('active');
-     return false;
+    var nav = $('nav');
+    hamburger.click(function() {
+      nav.toggleClass('shown');
+      hamburger.toggleClass('active');
+      return false;
   });
     
     

@@ -4,7 +4,7 @@ html {
   width: 100%;
   background-color: white;
   overflow: hidden !important;
-  background-color: #f2f2f2; }
+  font-size: 16px; }
 
 body {
   font-family: "Open Sans", sans-serif; }
@@ -28,7 +28,7 @@ body {
       z-index: 7;
       top: 100%;
       left: 50%;
-      width: 360px;
+      width: 100%;
       height: 1px;
       -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
@@ -44,7 +44,7 @@ body {
       left: 50%;
       margin-top: -2px;
       background-color: #c22436;
-      width: 30px;
+      width: 10%;
       height: 4px;
       -webkit-transform: translateX(-50%) skew(45deg);
       -ms-transform: translateX(-50%) skew(45deg);
@@ -63,6 +63,10 @@ h4 {
   margin-bottom: 2%;
   color: black; }
 
+h6 {
+  padding: 0;
+  margin: 0; }
+
 p {
   font-size: 0.8em;
   margin: 0;
@@ -79,12 +83,6 @@ span {
   height: 100vh;
   overflow: hidden !important; }
 
-.left {
-  float: left; }
-
-.right {
-  float: right; }
-
 .button {
   border: none;
   text-transform: uppercase;
@@ -100,11 +98,11 @@ span {
   position: relative;
   overflow: hidden;
   margin: 10px;
+  margin-top: 5px;
   padding: 0;
   width: 40px;
   height: 43px;
   font-size: 0;
-  text-indent: -9999px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -112,7 +110,6 @@ span {
   border-radius: none;
   border: none;
   cursor: pointer;
-  transition: background 0.3s;
   float: right; }
   .hamburger:focus {
     outline: none; }
@@ -175,19 +172,16 @@ span {
       transition-delay: 0.2s; }
 
 nav {
-  top: -50px;
+  top: -100%;
   width: 100%;
   height: 100%;
-  display: none;
   background: rgba(0, 0, 0, 0.9);
   z-index: 9;
-  transition: all 0.3s;
-  transition-delay: 0.3s;
   overflow: hidden;
-  position: fixed; }
+  position: fixed;
+  transition: top 0.8s ease-out 0.1s; }
   nav.shown {
-    top: 0;
-    display: block; }
+    top: 0; }
 
 .menu {
   text-align: center;
@@ -196,7 +190,7 @@ nav {
   padding-top: 10vh;
   padding-left: 0; }
   .menu li {
-    padding: 4% 0;
+    padding: 3% 0;
     color: white;
     text-transform: uppercase;
     font-size: 1.5em;
@@ -213,7 +207,7 @@ header {
 
 .logo {
   width: 20%;
-  height: 100%;
+  height: 90%;
   float: left; }
 
 .block {
@@ -465,7 +459,8 @@ header {
   border-bottom: 1px solid rgba(255, 255, 255, 0.22);
   position: relative; }
   .woman-class img {
-    height: 100%; }
+    height: 100%;
+    float: left; }
   .woman-class .button {
     background-color: transparent;
     border: 1px solid white;
@@ -485,7 +480,8 @@ header {
   height: 44%;
   position: relative; }
   .man-class img {
-    height: 100%; }
+    height: 100%;
+    float: right; }
   .man-class .button {
     background-color: transparent;
     border: 1px solid white;
@@ -510,8 +506,9 @@ header {
   height: 10%; }
 
 .transformation-container {
-  height: 60%;
+  height: 65%;
   width: 100%;
+  margin-top: 10%;
   overflow: hidden; }
   .transformation-container .transformation-image {
     width: 90%;
@@ -520,6 +517,14 @@ header {
     .transformation-container .transformation-image img {
       max-width: 100%;
       margin: 0 auto; }
+
+.fp-controlArrow.fp-prev {
+  left: 5px;
+  top: 70%; }
+
+.fp-controlArrow.fp-next {
+  right: 5px;
+  top: 70%; }
 
 .contact {
   background-image: url(../images/kettlebell-1045067_1280.jpg);
@@ -589,3 +594,26 @@ header {
         -ms-transform: translateY(1px);
         transform: translateY(1px);
         transition: 0.4s all ease; }
+
+.footer {
+  background-color: #1e1e1e;
+  width: auto;
+  height: auto;
+  color: white; }
+
+.fa-map-marker {
+  color: #c22436;
+  margin-right: 5%; }
+
+.fa-mobile {
+  color: #c22436; }
+
+.fa-envelope-o {
+  color: #c22436; }
+
+#fp-nav.right {
+  right: 0px;
+  z-index: 5; }
+
+#fp-nav ul li a span {
+  background: white; }
