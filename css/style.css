@@ -7,7 +7,8 @@ html {
   font-size: 16px; }
 
 body {
-  font-family: "Open Sans", sans-serif; }
+  font-family: "Open Sans", sans-serif;
+  position: relative; }
 
 .section {
   text-align: center; }
@@ -231,6 +232,24 @@ header {
     -ms-transform: skewY(3deg);
     transform: skewY(3deg); }
 
+.rotate {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: 11;
+  background: black;
+  text-align: center;
+  display: none; }
+  @media screen and (max-width: 700px) and (orientation: landscape) {
+    .rotate {
+      display: block; } }
+  .rotate p {
+    font-size: 1.2em;
+    margin-top: 40vh; }
+  .rotate i {
+    color: white;
+    margin: 2vh auto; }
+
 .homepage {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(194, 36, 54, 0.29)), url(../images/landing-page.jpg);
   background-position: center;
@@ -275,6 +294,8 @@ header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(194, 36, 54, 0.29)), url(../images/gym-bg.jpg);
   background-size: cover;
   background-repeat: no-repeat; }
+  .about .image {
+    height: 55vh; }
   .about blockquote {
     border-left: 2px solid #fff; }
     .about blockquote span {

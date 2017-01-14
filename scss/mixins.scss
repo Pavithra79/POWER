@@ -3,3 +3,24 @@
     margin: $marg;
     width: ((100%-(($cols - 1) * $marg))/$cols)
 }
+
+@mixin range-mQ($arg, $arg2){
+  @media screen and (min-width: $arg) and (max-width: $arg2){
+    @content;
+
+  }
+}
+
+@mixin mQ($arg){
+  @media screen and (min-width: $arg) {
+    @content;
+
+  }
+}
+
+@mixin landscape(){
+  @media screen and (max-width: 700px) and (orientation:landscape) {
+    @content;
+
+  }
+}
