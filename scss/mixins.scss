@@ -4,22 +4,42 @@
     width: ((100%-(($cols - 1) * $marg))/$cols)
 }
 
-@mixin range-mQ($arg, $arg2){
-  @media screen and (min-width: $arg) and (max-width: $arg2){
+
+//media queries
+@mixin phone-mQ{
+  @media screen and (min-width: 400px) {
     @content;
 
   }
 }
 
-@mixin mQ($arg){
+@mixin tablet-portrait-mQ{
+  @media screen and (min-width: 600px) {
+    @content;
+
+  }
+}
+
+@mixin tablet-landscape-mQ{
   @media screen and (min-width: $arg) {
     @content;
 
   }
 }
 
-@mixin landscape(){
-  @media screen and (max-width: 700px) and (orientation:landscape) {
+@mixin tablet-desktop-mQ{
+  @media screen and (min-width: $arg) {
+    @content;
+
+  }
+}
+
+
+
+
+
+@mixin landscape{
+  @media screen and (max-width: 780px) and (orientation:landscape) {
     @content;
 
   }

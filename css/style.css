@@ -5,6 +5,12 @@ html {
   background-color: white;
   overflow: hidden !important;
   font-size: 16px; }
+  @media screen and (min-width: 400px) {
+    html {
+      font-size: 20px; } }
+  @media screen and (min-width: 600px) {
+    html {
+      font-size: 28px; } }
 
 body {
   font-family: "Open Sans", sans-serif;
@@ -18,8 +24,8 @@ body {
   width: 100%; }
   .title-container h1 {
     font-weight: 400;
-    margin-top: 0%;
-    margin-bottom: 0%;
+    margin-top: 0;
+    margin-bottom: 0;
     padding-top: 2%;
     position: relative;
     color: white; }
@@ -50,7 +56,7 @@ body {
       -webkit-transform: translateX(-50%) skew(45deg);
       -ms-transform: translateX(-50%) skew(45deg);
       transform: translateX(-50%) skew(45deg);
-      transition: background-color 400ms ease 0ms; }
+      transition: background-color 400ms ease 0; }
 
 h2 {
   font-weight: 200;
@@ -73,10 +79,10 @@ p {
   margin: 0;
   padding: 0 5%;
   color: white;
-  text-shadow: 0px 0px 3px #000; }
+  text-shadow: 0 0 3px #000; }
 
 span {
-  text-shadow: 0px 0px 3px #000; }
+  text-shadow: 0 0 3px #000; }
 
 .container {
   z-index: 3;
@@ -98,8 +104,7 @@ span {
   display: block;
   position: relative;
   overflow: hidden;
-  margin: 10px;
-  margin-top: 5px;
+  margin: 5px 10px 10px;
   padding: 0;
   width: 40px;
   height: 43px;
@@ -112,6 +117,10 @@ span {
   border: none;
   cursor: pointer;
   float: right; }
+  @media screen and (min-width: 600px) {
+    .hamburger {
+      width: 60px;
+      margin-top: 20px; } }
   .hamburger:focus {
     outline: none; }
   .hamburger span {
@@ -122,6 +131,9 @@ span {
     right: 2px;
     height: 3px;
     background: white; }
+    @media screen and (min-width: 600px) {
+      .hamburger span {
+        height: 7px; } }
     .hamburger span:before {
       position: absolute;
       display: block;
@@ -131,6 +143,10 @@ span {
       background: white;
       content: "";
       top: -10px; }
+      @media screen and (min-width: 600px) {
+        .hamburger span:before {
+          height: 7px;
+          top: -15px; } }
     .hamburger span:after {
       position: absolute;
       display: block;
@@ -140,6 +156,10 @@ span {
       background: white;
       content: "";
       bottom: -10px; }
+      @media screen and (min-width: 600px) {
+        .hamburger span:after {
+          height: 7px;
+          bottom: -15px; } }
 
 .hamburger--x {
   background-color: transparent; }
@@ -192,13 +212,16 @@ nav {
   padding-left: 0; }
   .menu li {
     padding: 3% 0;
-    color: white;
     text-transform: uppercase;
     font-size: 1.5em;
     font-family: 'Nunito', sans-serif;
     transition: 0.2s ease; }
+    .menu li a {
+      text-decoration: none;
+      color: white; }
     .menu li:hover {
-      text-decoration: underline; }
+      text-decoration: underline;
+      color: #c22436; }
 
 header {
   width: 100%;
@@ -210,6 +233,14 @@ header {
   width: 20%;
   height: 90%;
   float: left; }
+  @media screen and (min-width: 400px) {
+    .logo {
+      width: 20%;
+      height: 75%; } }
+  @media screen and (min-width: 600px) {
+    .logo {
+      width: 15%;
+      height: 80%; } }
 
 .block {
   background-color: indianred;
@@ -219,7 +250,7 @@ header {
   position: absolute; }
   .block:after {
     content: '';
-    width: 0%;
+    width: 0;
     height: 100%;
     position: absolute;
     background: inherit;
@@ -240,7 +271,7 @@ header {
   background: black;
   text-align: center;
   display: none; }
-  @media screen and (max-width: 700px) and (orientation: landscape) {
+  @media screen and (max-width: 780px) and (orientation: landscape) {
     .rotate {
       display: block; } }
   .rotate p {
@@ -251,7 +282,7 @@ header {
     margin: 2vh auto; }
 
 .homepage {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(194, 36, 54, 0.29)), url(../images/landing-page.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(194, 36, 54, 0.29)), url("../images/landing-page.jpg");
   background-position: center;
   background-size: cover;
   position: relative; }
@@ -291,11 +322,11 @@ header {
 
 /*about-us*/
 .about {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(194, 36, 54, 0.29)), url(../images/gym-bg.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(194, 36, 54, 0.29)), url("../images/gym-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat; }
   .about .image {
-    height: 55vh; }
+    height: 50vh; }
   .about blockquote {
     border-left: 2px solid #fff; }
     .about blockquote span {
@@ -306,16 +337,27 @@ header {
 .image-about {
   width: 250px;
   height: 250px; }
+  @media screen and (min-width: 400px) {
+    .image-about {
+      width: 300px;
+      height: 300px; } }
+  @media screen and (min-width: 600px) {
+    .image-about {
+      width: 60%;
+      height: 90%; } }
 
 /*the gym*/
 .gym {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(194, 36, 54, 0.29)), url(../images/gym-image.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(194, 36, 54, 0.29)), url("../images/gym-image.jpg");
   background-size: cover;
   background-repeat: no-repeat; }
 
 .gym-info {
   height: 40%;
   width: 100%; }
+  @media screen and (min-width: 600px) {
+    .gym-info {
+      height: 30%; } }
   .gym-info .circle-row {
     width: 100%; }
     .gym-info .circle-row .circle {
@@ -328,6 +370,12 @@ header {
       margin: 0 auto;
       display: inline-block;
       margin-right: 2%; }
+      @media screen and (min-width: 400px) {
+        .gym-info .circle-row .circle {
+          margin-right: 5%; } }
+      @media screen and (min-width: 600px) {
+        .gym-info .circle-row .circle {
+          margin-right: 9%; } }
       .gym-info .circle-row .circle .counter {
         line-height: 50px;
         display: block;
@@ -339,7 +387,14 @@ header {
       display: inline-block;
       width: calc(100%/4.5);
       margin-bottom: 2%;
-      width: 54px; }
+      margin-right: 2%;
+      width: 60px; }
+      @media screen and (min-width: 400px) {
+        .gym-info .info-row .gym-info-box {
+          margin-right: 5%; } }
+      @media screen and (min-width: 600px) {
+        .gym-info .info-row .gym-info-box {
+          margin-right: 9%; } }
       .gym-info .info-row .gym-info-box span {
         font-size: 0.8em;
         color: white; }
@@ -359,6 +414,9 @@ header {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center; }
+  @media screen and (min-width: 600px) {
+    .carousel-cell {
+      height: 450px; } }
   .carousel-cell img {
     display: block;
     max-width: 100%;
@@ -422,7 +480,7 @@ header {
   background: #c22436; }
 
 .coaches {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(194, 36, 54, 0.29)), url(../images/gym-girl.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(194, 36, 54, 0.29)), url("../images/gym-girl.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: right bottom; }
@@ -470,7 +528,7 @@ header {
       height: 90%; }
 
 .classes {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(194, 36, 54, 0.29)), url(../images/KICKBOXER.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(194, 36, 54, 0.29)), url("../images/KICKBOXER.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: right; }
@@ -488,7 +546,7 @@ header {
     border: 1px solid white;
     display: block;
     position: absolute;
-    top: 40%;
+    top: 30%;
     right: 10%;
     padding-right: 6%;
     padding-left: 6%;
@@ -509,7 +567,7 @@ header {
     border: 1px solid white;
     display: block;
     position: absolute;
-    top: 40%;
+    top: 30%;
     left: 10%;
     padding-right: 6%;
     padding-left: 6%;
@@ -519,13 +577,13 @@ header {
       background: rgba(33, 150, 243, 0.24); }
 
 .transformation {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(194, 36, 54, 0.29)), url(../images/womanback.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(194, 36, 54, 0.29)), url("../images/womanback.jpg");
   background-size: cover;
   background-repeat: no-repeat; }
 
 .tranformation-info {
   width: 100%;
-  height: 10%; }
+  height: 15%; }
   .tranformation-info a {
     text-decoration: none;
     color: #c22436;
@@ -534,14 +592,17 @@ header {
       color: #971c2a; }
 
 .transformation-container {
-  height: 65%;
+  height: 60%;
   width: 100%;
-  margin-top: 10%;
+  margin-top: 5%;
   overflow: hidden; }
   .transformation-container .transformation-image {
     width: 90%;
     height: 100%;
     margin: 0 auto; }
+    @media screen and (min-width: 600px) {
+      .transformation-container .transformation-image {
+        margin-left: 15%; } }
     .transformation-container .transformation-image img {
       max-width: 100%;
       margin: 0 auto; }
@@ -560,7 +621,7 @@ header {
   top: 70%; }
 
 .contact {
-  background-image: url(../images/kettlebell-1045067_1280.jpg);
+  background-image: url("../images/kettlebell-1045067_1280.jpg");
   background-position: center;
   background-size: cover; }
   .contact h1 {
@@ -570,16 +631,20 @@ header {
   background-color: white;
   height: 75%;
   width: 75%;
-  margin: 0 auto;
-  margin-top: 4%;
-  box-shadow: 0px 1px 4px #BDBDBD; }
+  margin: 4% auto 0;
+  box-shadow: 0 1px 4px #BDBDBD; }
+  @media screen and (min-width: 400px) {
+    .card {
+      height: 70%; } }
+  @media screen and (min-width: 600px) {
+    .card {
+      height: 65%; } }
   .card #contact-form {
-    padding: 25px;
-    padding-top: 10px;
+    padding: 10px 25px 25px;
     text-align: center; }
     .card #contact-form h4 {
       font-weight: 700;
-      padding: .75rem 0;
+      padding: 0.75rem 0;
       border: solid rgba(0, 0, 0, 0.3);
       border-width: thin 0; }
     .card #contact-form span {
@@ -589,6 +654,9 @@ header {
       border: none;
       margin: 0.1em 0;
       padding: 5px 0; }
+      @media screen and (min-width: 600px) {
+        .card #contact-form fieldset {
+          padding: 20px 0; } }
       .card #contact-form fieldset input {
         margin: 0 0 5px;
         background-color: transparent;
@@ -667,7 +735,7 @@ header {
   margin-bottom: 2%; }
 
 #fp-nav.right {
-  right: 0px;
+  right: 0;
   z-index: 5; }
 
 #fp-nav ul li a span {

@@ -1,20 +1,27 @@
 @import "variables";
-@import "mixins";
-//universal
+@import "mixins"; //universal
+
 html {
     box-sizing: border-box;
     height: 100vh;
     width: 100%;
     background-color: white;
     overflow: hidden !important;
-    font-size:16px;
+    font-size: 16px;
+
+    @include phone-mQ{
+      font-size:20px;
+    }
+
+    @include tablet-portrait-mQ{
+      font-size: 28px;
+    }
 }
 
 body {
     font-family: $primary-font;
     position: relative;
 }
-
 
 .section {
     text-align: center;
@@ -23,13 +30,15 @@ body {
 .title-container {
     height: 12%;
     width: 100%;
+
     h1 {
         font-weight: 400;
-        margin-top: 0%;
-        margin-bottom: 0%;
+        margin-top: 0;
+        margin-bottom: 0;
         padding-top: 2%;
         position: relative;
         color: white;
+
         &:before {
             content: '';
             position: absolute;
@@ -43,6 +52,7 @@ body {
             max-width: 60%;
             background-color: white;
         }
+
         &:after {
             content: '';
             position: absolute;
@@ -54,7 +64,7 @@ body {
             width: 10%;
             height: 4px;
             transform: translateX(-50%) skew(45deg);
-            transition: background-color 400ms ease 0ms;
+            transition: background-color 400ms ease 0;
         }
     }
 }
@@ -73,9 +83,9 @@ h4 {
     color: black;
 }
 
-h6{
+h6 {
     padding: 0;
-    margin:0;
+    margin: 0;
 }
 
 p {
@@ -83,11 +93,11 @@ p {
     margin: 0;
     padding: 0 5%;
     color: white;
-    text-shadow: 0px 0px 3px #000;
+    text-shadow: 0 0 3px #000;
 }
 
 span {
-    text-shadow: 0px 0px 3px #000;
+    text-shadow: 0 0 3px #000;
 }
 
 .container {
@@ -96,7 +106,6 @@ span {
     height: 100vh;
     overflow: hidden !important;
 }
-
 
 .button {
     border: none;
@@ -107,16 +116,12 @@ span {
     text-decoration: none;
     color: white;
 }
-
-
 /*navbar*/
-
 .hamburger {
     display: block;
     position: relative;
     overflow: hidden;
-    margin: 10px;
-    margin-top: 5px;
+    margin: 5px 10px 10px;
     padding: 0;
     width: 40px;
     height: 43px;
@@ -127,9 +132,16 @@ span {
     border: none;
     cursor: pointer;
     float: right;
+
+    @include tablet-portrait-mQ{
+      width: 60px;
+      margin-top: 20px;
+    };
+
     &:focus {
         outline: none;
     }
+
     span {
         display: block;
         position: absolute;
@@ -138,6 +150,11 @@ span {
         right: 2px;
         height: 3px;
         background: white;
+
+        @include tablet-portrait-mQ{
+          height: 7px;
+        };
+
         &:before {
             position: absolute;
             display: block;
@@ -147,7 +164,14 @@ span {
             background: white;
             content: "";
             top: -10px;
+
+            @include tablet-portrait-mQ{
+              height: 7px;
+              top:-15px
+            };
+
         }
+
         &:after {
             position: absolute;
             display: block;
@@ -157,33 +181,44 @@ span {
             background: white;
             content: "";
             bottom: -10px;
+
+            @include tablet-portrait-mQ{
+              height: 7px;
+              bottom:-15px
+            };
         }
     }
 }
 
 .hamburger--x {
     background-color: transparent;
+
     span {
         transition: background 0s 0.2s;
+
         &:before {
             transition-duration: 0.3s;
             transition-delay: 0.2s;
             transition-property: top, transform;
         }
+
         &:after {
             transition-duration: 0.3s;
             transition-delay: 0.2s;
             transition-property: bottom, transform;
         }
     }
+
     &.active {
         span {
             background: none;
+
             &:before {
                 top: 0;
                 transform: rotate(45deg);
                 transition-delay: 0.2s;
             }
+
             &:after {
                 bottom: 0;
                 transform: rotate(-45deg);
@@ -202,9 +237,9 @@ nav {
     overflow: hidden;
     position: fixed;
     transition: top 0.8s ease-out 0.1s;
+
     &.shown {
         top: 0;
-
     }
 }
 
@@ -214,15 +249,23 @@ nav {
     list-style-type: none;
     padding-top: 10vh;
     padding-left: 0;
+
     li {
         padding: 3% 0;
-        color: white;
         text-transform: uppercase;
         font-size: 1.5em;
         font-family: 'Nunito', sans-serif;
         transition: 0.2s ease;
+        a{
+          text-decoration: none;
+          color: white;
+
+
+
+        }
         &:hover {
             text-decoration: underline;
+            color:$primary-color;
         }
     }
 }
@@ -238,6 +281,18 @@ header {
     width: 20%;
     height: 90%;
     float: left;
+
+    @include phone-mQ{
+      width: 20%;
+      height:75%;
+
+    };
+
+    @include tablet-portrait-mQ{
+      width: 15%;
+      height:80%;
+
+    };
 }
 
 .block {
@@ -246,9 +301,10 @@ header {
     height: 54px;
     z-index: -1;
     position: absolute;
+
     &:after {
         content: '';
-        width: 0%;
+        width: 0;
         height: 100%;
         position: absolute;
         background: inherit;
@@ -258,43 +314,43 @@ header {
         transform: skewY(3deg);
     }
 }
-
 //rotate
-.rotate{
-  position: absolute;
-  height: 100vh;
-  width: 100vw;
-  z-index:11;
-  background: black;
-  text-align: center;
-  display: none;
+.rotate {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: 11;
+    background: black;
+    text-align: center;
+    display: none;
+    @include landscape {
+        display: block;
+    }
 
-  @include landscape{
-    display: block;
-  }
+    p {
+        font-size: 1.2em;
+        margin-top: 40vh;
+    }
 
-  p{
-    font-size: 1.2em;
-    margin-top:40vh;
-  }
-
-  i{
-    color:white;
-    margin: 2vh auto;
-
-  }
+    i {
+        color: white;
+        margin: 2vh auto;
+    }
 }
 //homepage
+
 .homepage {
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(194, 36, 54, 0.29)), url(../images/landing-page.jpg);
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(194, 36, 54, 0.29)), url("../images/landing-page.jpg");
     //    background-blend-mode: color-dodge;
     background-position: center;
     background-size: cover;
     position: relative;
+
     .homepage-text {
         position: absolute;
         top: 40%;
         text-align: left;
+
         h1 {
             font-size: 4em;
             font-family: $title-font;
@@ -302,6 +358,7 @@ header {
             color: $primary-color;
             margin: 0;
         }
+
         .tagline {
             color: white;
             display: block;
@@ -309,11 +366,13 @@ header {
             text-transform: uppercase;
             margin-bottom: 6%;
         }
+
         .button-container {
             width: 100%;
             height: auto;
             display: block;
         }
+
         .join-button {
             display: block;
             text-align: center;
@@ -321,6 +380,7 @@ header {
             text-decoration: none;
             width: 50%;
             background-color: $primary-color;
+
             &:hover {
                 background-color: darken($primary-color, 10%);
                 transform: translateY(1px);
@@ -329,20 +389,19 @@ header {
         }
     }
 }
-
-
 /*about-us*/
-
 .about {
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(194, 36, 54, 0.29)), url(../images/gym-bg.jpg);
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(194, 36, 54, 0.29)), url("../images/gym-bg.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 
-    .image{
-      height:55vh;
+    .image {
+        height: 50vh;
     }
+
     blockquote {
         border-left: 2px solid #fff;
+
         span {
             display: block;
             margin-top: 10px;
@@ -354,13 +413,21 @@ header {
 .image-about {
     width: 250px;
     height: 250px;
+
+    @include phone-mQ{
+      width: 300px;
+      height: 300px;
+
+
+    }
+    @include tablet-portrait-mQ{
+      width: 60%;
+height: 90%;
+    };
 }
-
-
 /*the gym*/
-
 .gym {
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(194, 36, 54, 0.29)), url(../images/gym-image.jpg);
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(194, 36, 54, 0.29)), url("../images/gym-image.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -368,8 +435,16 @@ header {
 .gym-info {
     height: 40%;
     width: 100%;
+
+    @include tablet-portrait-mQ{
+
+      height: 30%;
+
+    };
+
     .circle-row {
         width: 100%;
+
         .circle {
             vertical-align: middle;
             font-size: 1.5em;
@@ -380,6 +455,15 @@ header {
             margin: 0 auto;
             display: inline-block;
             margin-right: 2%;
+
+            @include phone-mQ{
+              margin-right: 5%;
+            };
+
+            @include tablet-portrait-mQ{
+              margin-right: 9%;
+            };
+
             .counter {
                 line-height: 50px;
                 display: block;
@@ -388,13 +472,25 @@ header {
             }
         }
     }
+
     .info-row {
         width: 100%;
+
         .gym-info-box {
             display: inline-block;
             width: calc(100%/4.5);
             margin-bottom: 2%;
-            width: 54px;
+              margin-right: 2%;
+            width: 60px;
+
+            @include phone-mQ{
+              margin-right: 5%;
+            };
+
+            @include tablet-portrait-mQ{
+              margin-right: 9%;
+            };
+
             span {
                 font-size: 0.8em;
                 color: white;
@@ -415,6 +511,14 @@ header {
     justify-content: center;
     -webkit-align-items: center;
     align-items: center;
+
+
+    @include tablet-portrait-mQ{
+
+      height: 450px;
+
+    };
+
     img {
         display: block;
         max-width: 100%;
@@ -432,7 +536,6 @@ header {
 
 
 /* brighten selected image */
-
 .carousel-cell.is-selected img {
     opacity: 1;
     -webkit-transform: scale(1);
@@ -440,10 +543,7 @@ header {
     -webkit-filter: none;
     filter: none;
 }
-
-
 /* buttons, no circle */
-
 .flickity-prev-next-button {
     width: 60px;
     height: 60px;
@@ -455,10 +555,7 @@ header {
     background: transparent;
     opacity: 1;
 }
-
-
 /* arrow color */
-
 .flickity-prev-next-button .arrow {
     fill: white;
 }
@@ -467,10 +564,7 @@ header {
     color: white;
     opacity: 0.7;
 }
-
-
 /* closer to edge */
-
 .flickity-prev-next-button.previous {
     left: 0;
 }
@@ -478,14 +572,10 @@ header {
 .flickity-prev-next-button.next {
     right: 0;
 }
-
-
 /* hide disabled button */
-
 .flickity-prev-next-button:disabled {
     display: none;
 }
-
 //gallery dots
 .flickity-page-dots .dot {
     background: #ffffff;
@@ -495,10 +585,9 @@ header {
 .flickity-page-dots .dot.is-selected {
     background: $primary-color;
 }
-
 //coaches
 .coaches {
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(194, 36, 54, 0.29)), url(../images/gym-girl.jpg);
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(194, 36, 54, 0.29)), url("../images/gym-girl.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right bottom;
@@ -507,6 +596,8 @@ header {
 .coaches-intro {
     width: 100%;
     height: 22%;
+
+
 }
 
 .coaches-box {
@@ -517,6 +608,7 @@ header {
     background-color: rgba(39, 29, 29, 0.79);
     display: inline-block;
     box-shadow: 0 8px 16px 0 black;
+
     &:hover {
         box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     }
@@ -526,6 +618,7 @@ header {
     width: 100%;
     height: 60%;
     overflow: hidden;
+
     img {
         width: 100%;
         height: 100%;
@@ -536,27 +629,30 @@ header {
     height: 40%;
     width: 100%;
     position: relative;
+
     .info-row {
         width: 100%;
         height: 60%;
+
         h4 {
             color: white;
             margin: 0;
         }
     }
+
     .icon-row {
         width: 100%;
         height: 30%;
         margin-top: 0.5%;
+
         svg {
             height: 90%;
         }
     }
 }
-
 //classes
 .classes {
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(194, 36, 54, 0.29)), url(../images/KICKBOXER.jpg);
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(194, 36, 54, 0.29)), url("../images/KICKBOXER.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right;
@@ -567,21 +663,24 @@ header {
     height: 44%;
     border-bottom: 1px solid rgba(255, 255, 255, 0.22);
     position: relative;
+
     img {
         height: 100%;
-        float:left;
+        float: left;
     }
+
     .button {
         background-color: transparent;
         border: 1px solid white;
         display: block;
         position: absolute;
-        top: 40%;
+        top: 30%;
         right: 10%;
         padding-right: 6%;
         padding-left: 6%;
         text-decoration: none;
         font-size: 0.8em;
+
         &:hover {
             background: rgba(255, 0, 0, 0.33);
         }
@@ -592,88 +691,94 @@ header {
     width: 100%;
     height: 44%;
     position: relative;
+
     img {
         height: 100%;
-        float:right;
+        float: right;
     }
+
     .button {
         background-color: transparent;
         border: 1px solid white;
         display: block;
         position: absolute;
-        top: 40%;
+        top: 30%;
         left: 10%;
         padding-right: 6%;
         padding-left: 6%;
         text-decoration: none;
         font-size: 0.8em;
+
         &:hover {
             background: rgba(33, 150, 243, 0.24);
         }
     }
 }
-
 //tranformations
 .transformation {
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(194, 36, 54, 0.29)), url(../images/womanback.jpg);
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(194, 36, 54, 0.29)), url("../images/womanback.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .tranformation-info {
     width: 100%;
-    height: 10%;
+    height: 15%;
 
-    a{
-      text-decoration: none;
-      color:$primary-color;
-      transition: color 0.2s ease-in;
+    a {
+        text-decoration: none;
+        color: $primary-color;
+        transition: color 0.2s ease-in;
 
-      &:hover{
-        color:darken($primary-color, 10%);
-      }
+        &:hover {
+            color: darken($primary-color, 10%);
+        }
     }
 }
 
 .transformation-container {
-    height: 65%;
+    height: 60%;
     width: 100%;
-    margin-top: 10%;
+    margin-top: 5%;
     overflow: hidden;
+
     .transformation-image {
         width: 90%;
         height: 100%;
         margin: 0 auto;
+
+        @include tablet-portrait-mQ{
+          margin-left: 15%;
+        };
+
         img {
             max-width: 100%;
             margin: 0 auto;
         }
     }
-
 }
 
-.transformation-contact{
-  color:white;
-  font-size: 0.8em;
-  margin-top:2%;
+.transformation-contact {
+    color: white;
+    font-size: 0.8em;
+    margin-top: 2%;
 }
 
-.fp-controlArrow.fp-prev{
-    left:5px;
-    top:70%;
-
+.fp-controlArrow.fp-prev {
+    left: 5px;
+    top: 70%;
 }
 
-.fp-controlArrow.fp-next{
-    right:5px;
-    top:70%;
+.fp-controlArrow.fp-next {
+    right: 5px;
+    top: 70%;
 }
-
 //contact
 .contact {
-    background-image: url(../images/kettlebell-1045067_1280.jpg);
+    background-image: url("../images/kettlebell-1045067_1280.jpg");
     background-position: center;
     background-size: cover;
+
     h1 {
         color: white;
     }
@@ -683,27 +788,42 @@ header {
     background-color: white;
     height: 75%;
     width: 75%;
-    margin: 0 auto;
-    margin-top: 4%;
-    box-shadow: 0px 1px 4px #BDBDBD;
+    margin: 4% auto 0;
+    box-shadow: 0 1px 4px #BDBDBD;
+
+    @include phone-mQ{
+      height:70%;
+    };
+
+    @include tablet-portrait-mQ{
+      height: 65%;
+    };
+
     #contact-form {
-        padding: 25px;
-        padding-top: 10px;
+        padding: 10px 25px 25px;
         text-align: center;
+
         h4 {
             font-weight: 700;
-            padding: .75rem 0;
+            padding: 0.75rem 0;
             border: solid rgba(0, 0, 0, 0.3);
             border-width: thin 0;
         }
+
         span {
             font-size: 0.7em;
             text-shadow: none;
         }
+
         fieldset {
             border: none;
             margin: 0.1em 0;
             padding: 5px 0;
+
+            @include tablet-portrait-mQ{
+              padding: 20px 0;
+            };
+
             input {
                 margin: 0 0 5px;
                 background-color: transparent;
@@ -715,10 +835,12 @@ header {
                 border-left: 1px solid #fff;
                 border-right: 1px solid #fff;
                 border-bottom: 1px solid #ebd7cf;
+
                 &:focus {
                     outline: none;
                 }
             }
+
             textarea {
                 margin: 0 0 5px;
                 resize: none;
@@ -731,16 +853,19 @@ header {
                 border-left: 1px solid #fff;
                 border-right: 1px solid #fff;
                 border-bottom: 1px solid #ebd7cf;
+
                 &:focus {
                     outline: none;
                 }
             }
         }
+
         .submit-button {
             background: #4CAF50;
             color: #FFFFFF;
             width: 100%;
             transition: 0.3s ease-in;
+
             &:hover {
                 background-color: darken(#4CAF50, 10%);
                 transform: translateY(1px);
@@ -749,69 +874,63 @@ header {
         }
     }
 }
-
 //footer
-
-.footer{
+.footer {
     background-color: #1e1e1e;
     width: auto;
-    height:auto;
-    color:white;
+    height: auto;
+    color: white;
 
-    span{
-      font-size: 0.8em;
-      letter-spacing: 1.5px;
+    span {
+        font-size: 0.8em;
+        letter-spacing: 1.5px;
     }
 }
 
-.footer-add{
-  margin-top: 3%;
+.footer-add {
+    margin-top: 3%;
 }
-.subtitle{
-  display: block;
-  font-size: 0.7em;
-  color:#858585;
+
+.subtitle {
+    display: block;
+    font-size: 0.7em;
+    color: #858585;
 }
-.fa-map-marker{
-    color:$primary-color;
+
+.fa-map-marker {
+    color: $primary-color;
     margin-right: 2%;
 }
 
-.fa-mobile{
-    color:$primary-color;
-      margin-right: 2%;
-
+.fa-mobile {
+    color: $primary-color;
+    margin-right: 2%;
 }
 
-.fa-envelope-o{
-    color:$primary-color;
-      margin-right: 2%;
-
+.fa-envelope-o {
+    color: $primary-color;
+    margin-right: 2%;
 }
 
-.sm-row{
-  margin-top: 3%;
-  margin-bottom: 3%;
+.sm-row {
+    margin-top: 3%;
+    margin-bottom: 3%;
 
-  i{
-    padding-right: 2%;
-  }
-
+    i {
+        padding-right: 2%;
+    }
 }
 
-.copyright{
-  margin-bottom: 2%;
+.copyright {
+    margin-bottom: 2%;
 }
-
 //navigation dots
-
-#fp-nav.right{
-    right:0px;
-    z-index:5;
+#fp-nav.right {
+    right: 0;
+    z-index: 5;
 }
 
-#fp-nav ul li a span{
+#fp-nav ul li a span {
     background: white;
 }
-
 //coaches page
