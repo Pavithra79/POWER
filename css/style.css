@@ -29,6 +29,9 @@ body {
     padding-top: 2%;
     position: relative;
     color: white; }
+    @media screen and (min-width: 1000px) {
+      .title-container h1 {
+        padding-top: 5px; } }
     .title-container h1:before {
       content: '';
       position: absolute;
@@ -210,12 +213,18 @@ nav {
   list-style-type: none;
   padding-top: 10vh;
   padding-left: 0; }
+  @media screen and (min-width: 1000px) {
+    .menu {
+      padding-top: 0; } }
   .menu li {
     padding: 3% 0;
     text-transform: uppercase;
     font-size: 1.5em;
     font-family: 'Nunito', sans-serif;
     transition: 0.2s ease; }
+    @media screen and (min-width: 1000px) {
+      .menu li {
+        padding: 1.5% 0; } }
     .menu li a {
       text-decoration: none;
       color: white; }
@@ -241,6 +250,10 @@ header {
     .logo {
       width: 15%;
       height: 80%; } }
+  @media screen and (min-width: 1000px) {
+    .logo {
+      width: 13%;
+      height: 112%; } }
 
 .block {
   background-color: indianred;
@@ -326,9 +339,16 @@ header {
   background-size: cover;
   background-repeat: no-repeat; }
   .about .image {
-    height: 50vh; }
+    height: 55vh; }
+    @media screen and (min-width: 1000px) {
+      .about .image {
+        height: 60vh; } }
   .about blockquote {
     border-left: 2px solid #fff; }
+    @media screen and (min-width: 1000px) {
+      .about blockquote {
+        width: 70%;
+        margin: 2% auto; } }
     .about blockquote span {
       display: block;
       margin-top: 10px;
@@ -345,6 +365,10 @@ header {
     .image-about {
       width: 60%;
       height: 90%; } }
+  @media screen and (min-width: 1000px) {
+    .image-about {
+      width: 30%;
+      height: 100%; } }
 
 /*the gym*/
 .gym {
@@ -357,7 +381,10 @@ header {
   width: 100%; }
   @media screen and (min-width: 600px) {
     .gym-info {
-      height: 30%; } }
+      height: 35%; } }
+  @media screen and (min-width: 1000px) {
+    .gym-info {
+      margin-top: 0.3%; } }
   .gym-info .circle-row {
     width: 100%; }
     .gym-info .circle-row .circle {
@@ -395,6 +422,9 @@ header {
       @media screen and (min-width: 600px) {
         .gym-info .info-row .gym-info-box {
           margin-right: 9%; } }
+      @media screen and (min-width: 1000px) {
+        .gym-info .info-row .gym-info-box {
+          margin-bottom: 1%; } }
       .gym-info .info-row .gym-info-box span {
         font-size: 0.8em;
         color: white; }
@@ -417,6 +447,9 @@ header {
   @media screen and (min-width: 600px) {
     .carousel-cell {
       height: 450px; } }
+  @media screen and (min-width: 1000px) {
+    .carousel-cell {
+      height: 300px; } }
   .carousel-cell img {
     display: block;
     max-width: 100%;
@@ -464,9 +497,15 @@ header {
 /* closer to edge */
 .flickity-prev-next-button.previous {
   left: 0; }
+  @media screen and (min-width: 1000px) {
+    .flickity-prev-next-button.previous {
+      left: 50px; } }
 
 .flickity-prev-next-button.next {
   right: 0; }
+  @media screen and (min-width: 1000px) {
+    .flickity-prev-next-button.next {
+      right: 50px; } }
 
 /* hide disabled button */
 .flickity-prev-next-button:disabled {
@@ -483,11 +522,20 @@ header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(194, 36, 54, 0.29)), url("../images/gym-girl.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: right bottom; }
+  background-position: right; }
+  @media screen and (min-width: 1000px) {
+    .coaches {
+      background-position-x: 483px;
+      background-repeat: repeat;
+      background-position-y: 100%, 100%; } }
 
 .coaches-intro {
   width: 100%;
   height: 22%; }
+  @media screen and (min-width: 1000px) {
+    .coaches-intro p {
+      padding-top: 2%;
+      padding: 0 15%; } }
 
 .coaches-box {
   float: left;
@@ -499,6 +547,12 @@ header {
   background-color: rgba(39, 29, 29, 0.79);
   display: inline-block;
   box-shadow: 0 8px 16px 0 black; }
+  @media screen and (min-width: 1000px) {
+    .coaches-box {
+      float: left;
+      margin: 0%;
+      width: 25%;
+      height: 64%; } }
   .coaches-box:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); }
 
@@ -506,6 +560,9 @@ header {
   width: 100%;
   height: 60%;
   overflow: hidden; }
+  @media screen and (min-width: 1000px) {
+    .coaches-image {
+      height: 65%; } }
   .coaches-image img {
     width: 100%;
     height: 100%; }
@@ -514,9 +571,15 @@ header {
   height: 40%;
   width: 100%;
   position: relative; }
+  @media screen and (min-width: 1000px) {
+    .coaches-info {
+      height: 35%; } }
   .coaches-info .info-row {
     width: 100%;
     height: 60%; }
+    @media screen and (min-width: 1000px) {
+      .coaches-info .info-row {
+        height: 50%; } }
     .coaches-info .info-row h4 {
       color: white;
       margin: 0; }
@@ -525,7 +588,14 @@ header {
     height: 30%;
     margin-top: 0.5%; }
     .coaches-info .icon-row svg {
-      height: 90%; }
+      height: 90%;
+      cursor: pointer; }
+      .coaches-info .icon-row svg .facebook:hover {
+        fill: #8aa0ce; }
+      .coaches-info .icon-row svg .instagram:hover {
+        fill: #498ec9; }
+      .coaches-info .icon-row svg .twitter:hover {
+        fill: #afd5f0; }
 
 .classes {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(194, 36, 54, 0.29)), url("../images/KICKBOXER.jpg");
@@ -538,9 +608,19 @@ header {
   height: 44%;
   border-bottom: 1px solid rgba(255, 255, 255, 0.22);
   position: relative; }
+  @media screen and (min-width: 1000px) {
+    .woman-class {
+      width: 49.9%;
+      height: 88%;
+      float: left;
+      border-right: 1px solid rgba(255, 255, 255, 0.22); } }
   .woman-class img {
     height: 100%;
     float: left; }
+    @media screen and (min-width: 1000px) {
+      .woman-class img {
+        height: 90%;
+        padding-top: 10%; } }
   .woman-class .button {
     background-color: transparent;
     border: 1px solid white;
@@ -559,9 +639,18 @@ header {
   width: 100%;
   height: 44%;
   position: relative; }
+  @media screen and (min-width: 1000px) {
+    .man-class {
+      width: 50%;
+      height: 88%;
+      float: right; } }
   .man-class img {
     height: 100%;
     float: right; }
+    @media screen and (min-width: 1000px) {
+      .man-class img {
+        height: 90%;
+        padding-top: 10%; } }
   .man-class .button {
     background-color: transparent;
     border: 1px solid white;
@@ -596,6 +685,13 @@ header {
   width: 100%;
   margin-top: 5%;
   overflow: hidden; }
+  @media screen and (min-width: 1000px) {
+    .transformation-container {
+      height: 63%;
+      width: 55%;
+      margin-top: 5%;
+      overflow: hidden;
+      margin: 0 auto; } }
   .transformation-container .transformation-image {
     width: 90%;
     height: 100%;
@@ -606,6 +702,9 @@ header {
     .transformation-container .transformation-image img {
       max-width: 100%;
       margin: 0 auto; }
+      @media screen and (min-width: 1000px) {
+        .transformation-container .transformation-image img {
+          max-width: 75%; } }
 
 .transformation-contact {
   color: white;
@@ -639,9 +738,18 @@ header {
   @media screen and (min-width: 600px) {
     .card {
       height: 65%; } }
+  @media screen and (min-width: 1000px) {
+    .card {
+      height: 83%;
+      width: 40%;
+      margin: 0 auto;
+      margin-top: 15px; } }
   .card #contact-form {
     padding: 10px 25px 25px;
     text-align: center; }
+    @media screen and (min-width: 1000px) {
+      .card #contact-form {
+        font-size: 0.8em; } }
     .card #contact-form h4 {
       font-weight: 700;
       padding: 0.75rem 0;
@@ -657,6 +765,9 @@ header {
       @media screen and (min-width: 600px) {
         .card #contact-form fieldset {
           padding: 20px 0; } }
+      @media screen and (min-width: 1000px) {
+        .card #contact-form fieldset {
+          padding: 18px 0; } }
       .card #contact-form fieldset input {
         margin: 0 0 5px;
         background-color: transparent;
@@ -688,7 +799,9 @@ header {
       background: #4CAF50;
       color: #FFFFFF;
       width: 100%;
-      transition: 0.3s ease-in; }
+      transition: 0.3s ease-in;
+      cursor: -webkit-grab;
+      cursor: grab; }
       .card #contact-form .submit-button:hover {
         background-color: #3d8b40;
         -webkit-transform: translateY(1px);
@@ -704,6 +817,9 @@ header {
   .footer span {
     font-size: 0.8em;
     letter-spacing: 1.5px; }
+  @media screen and (min-width: 1000px) {
+    .footer h1 {
+      padding-top: 20px; } }
 
 .footer-add {
   margin-top: 3%; }
@@ -740,3 +856,79 @@ header {
 
 #fp-nav ul li a span {
   background: white; }
+
+#loading-page {
+  position: relative;
+  z-index: 999;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: black; }
+  #loading-page h1 {
+    font-size: 4em;
+    font-family: "Reem Kufi", sans-serif;
+    mix-blend-mode: screen;
+    color: #c22436;
+    margin: 0;
+    text-align: center;
+    padding-top: 20vh; }
+
+.loader-container {
+  position: absolute;
+  top: 50%;
+  left: 50%; }
+
+.loader,
+.loader:before,
+.loader:after {
+  background: #ffffff;
+  -webkit-animation: load1 1s infinite ease-in-out;
+  animation: load1 1s infinite ease-in-out;
+  width: 1em;
+  height: 4em; }
+
+.loader {
+  color: #ffffff;
+  text-indent: -9999em;
+  margin: 88px auto;
+  position: relative;
+  font-size: 11px;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s; }
+
+.loader:before,
+.loader:after {
+  position: absolute;
+  top: 0;
+  content: ''; }
+
+.loader:before {
+  left: -1.5em;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s; }
+
+.loader:after {
+  left: 1.5em; }
+
+@-webkit-keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0;
+    height: 4em; }
+  40% {
+    box-shadow: 0 -2em;
+    height: 5em; } }
+
+@keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0;
+    height: 4em; }
+  40% {
+    box-shadow: 0 -2em;
+    height: 5em; } }

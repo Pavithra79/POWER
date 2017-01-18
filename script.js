@@ -1,4 +1,16 @@
 $(function() {
+
+  function loader() {
+
+      $("#loading-page").fadeOut('normal');
+
+
+  }
+  setTimeout(loader, 2200);
+
+
+
+
     $('#fullpage').fullpage({
         //Navigation
         menu: '.menu',
@@ -106,6 +118,7 @@ $(function() {
         autoplay:true,
       adaptiveHeight: true
     });
+
 
 
 

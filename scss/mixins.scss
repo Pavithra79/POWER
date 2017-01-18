@@ -27,8 +27,8 @@
   }
 }
 
-@mixin tablet-desktop-mQ{
-  @media screen and (min-width: $arg) {
+@mixin desktop-mQ{
+  @media screen and (min-width: 1000px) {
     @content;
 
   }
